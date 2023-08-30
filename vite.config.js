@@ -13,10 +13,26 @@ export default defineConfig({
     vue(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
+      // targets to transform
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/ // .md
+      ],
+
+      // global imports to register
+      imports: [
+        // presets
+        'vue',
+        'vue-router'
+      ],
+      // Enable auto import by filename for default module exports under directories
+      defaultExportByFilename: false
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
-    }),
+      resolvers: [ElementPlusResolver()]
+    })
   ],
   resolve: {
     alias: {
