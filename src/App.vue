@@ -4,14 +4,10 @@
   </el-config-provider>
 </template>
 <script setup>
-import {reactive} from "vue";
-import { RouterView } from 'vue-router'
-
 const elConfig = reactive({
   zIndex: 3000,
-  size: 'small', // small、large、default
+  size: 'small' // small、large、default
 })
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
